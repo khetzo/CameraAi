@@ -1,0 +1,32 @@
+{
+  "name": "cameraai",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@expo/metro-runtime": "~3.2.1",
+    "@mui/material": "^5.16.4",
+    "@react-navigation/bottom-tabs": "^6.6.1",
+    "@react-navigation/native": "^6.1.18",
+    "expo": "~51.0.21",
+    "expo-camera": "~15.0.14",
+    "expo-status-bar": "~1.12.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.3",
+    "react-native-web": "~0.19.10",
+    "react-router-dom": "^6.25.1",
+    "undefined": "@expo/vector-icons/Ionicons"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}

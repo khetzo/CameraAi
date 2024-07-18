@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "CameraAi",
+    "slug": "CameraAi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "permissions": [
+      "CAMERA",
+      "RECORD_AUDIO",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE"
+    ],
+    "platforms": ["ios", "android", "web"],
+    "description": "A React Native app using Expo with camera functionality.",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "iosConfig": {
+      "usesAppleSignIn": true,
+      "googleServicesFile": "./google-services.json",
+      "bundleIdentifier": "com.yourcompany.cameraai"
+    },
+    "androidConfig": {
+      "package": "com.yourcompany.cameraai",
+      "googleServicesFile": "./google-services.json"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "ts", "tsx", "json", "svg"],
+      "nodeModulesPath": "./node_modules"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "your-organization",
+            "project": "cameraai",
+            "authToken": "your-auth-token"
+          }
+        }
+      ]
+    },
+    "iosStatusBar": {
+      "style": "dark-content",
+      "backgroundColor": "#ffffff"
+    },
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#ffffff"
+    },
+    "notification": {
+      "icon": "./assets/notification-icon.png",
+      "color": "#ffffff",
+      "androidMode": "collapse"
+    },
+    "facebookScheme": "fb1234567890",
+    "facebookAdvertiserIDCollectionEnabled": true,
+    "facebookAppId": "1234567890",
+    "androidNavigationBar": {
+      "backgroundColor": "#ffffff"
+    },
+    "webDangerouslyDisableIoniconsBrokenFontFallback": true
+  }
+}
