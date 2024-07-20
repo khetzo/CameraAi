@@ -6,12 +6,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CameraView, useCameraPermissions } from 'expo-camera';
+import * as tf from '@tensorflow/tfjs';
+import '@tensorflow/tfjs-backend-webgl';
+
 
 function HomeScreen() {
 
     const [facing, setFacing] = useState('back');
     const [permission, requestPermission] = useCameraPermissions();
-  
+
     if (!permission) {
       // Camera permissions are still loading.
       return  <Text style={{ textAlign: 'center' }}>Camera permissions are still loading.</Text>
@@ -30,14 +33,17 @@ function HomeScreen() {
         console.log("Camera permissions are grandted")
         // Camera permissions are still loading.
         function toggleCameraFacing() {
-            setFacing(current => (current === 'back' ? 'front' : 'back'));
+          console.log(`Curren facing value is: ${facing}`);
+       
+        setFacing(current => (current === 'back' ? 'front' : 'back'));
+          console.log('toggleFacing calffled');
           }
         
           return (
            
             <View style={styles.container}>
             
-              <CameraView style={styles.camera} facing={facing}>
+              <CameraView style={styles.camera} type={facing}>
                 <View style={styles.buttonContainer}>
                   <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
                     <Text style={styles.text}>Flip Camera</Text>
@@ -119,6 +125,7 @@ const styles = StyleSheet.create({
       flex: 1,
       alignSelf: 'flex-end',
       alignItems: 'center',
+      backgroundColor: 'red',
     },
     text: {
       fontSize: 24,
